@@ -47,19 +47,20 @@ INSTALLED_APPS = [
     'app',
     'cart',
     'api',
+    'drf_yasg',
 ]
 
 CART_SESSION_ID = 'cart'
 
-REST_FRAMEWORK={
-    'DEFAULT_PERMISSION_CLASSES':[
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
     ],
-        'DEFAULT_AUTHENTICATION_CLASSESS':[
-            'rest_framework.authentication.SessionAuthentication',
-            'rest_framework.authentication.TokenAuthentication',
-        ]
-    
+    'DEFAULT_AUTHENTICATION_CLASSESS': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+
 }
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -76,7 +77,7 @@ ROOT_URLCONF = 'E_shop.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -141,12 +142,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT='/static/'
-STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
+STATIC_ROOT = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  
-SITE_ID=1
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+SITE_ID = 1
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
@@ -155,5 +156,5 @@ EMAIL_HOST_USER = 'me@gmail.com'
 EMAIL_HOST_PASSWORD = 'password'
 
 
-LOGIN_REDIRECT_URL='home'
-LOGOUT_REDIRECT_URL='home'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
